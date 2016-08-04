@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="BesselLoading">
+        <attr name="octagon_angle" format="float" />
+        <attr name="loading_stroke_width" format="dimension" />
+        <attr name="loading_start_color" format="color" />
+        <attr name="loading_end_color" format="color" />
+        <attr name="mask_color" format="color" />
+        <attr name="loading_draw_mode" format="enum">
+            <enum name="standard" value="0" />
+            <enum name="revision" value="1" />
+        </attr>
+    </declare-styleable>
+
+</resources>
