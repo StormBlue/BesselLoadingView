@@ -1,22 +1,20 @@
 package com.bluestrom.gao.besselloadingtest;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
-import com.bluestrom.gao.customview.TextureViewRingPercent;
 import com.bluestrom.gao.customview.ViewRingPercent;
 
 public class TextureViewTestActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private TextureViewRingPercent loading;
+    private ViewRingPercent loading;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_texture_view_test);
-        loading = (TextureViewRingPercent) findViewById(R.id.loading);
+        loading = (ViewRingPercent) findViewById(R.id.loading);
     }
 
     @Override
@@ -29,7 +27,7 @@ public class TextureViewTestActivity extends AppCompatActivity implements View.O
         switch (v.getId()) {
             case R.id.jump:
 //                startActivity(new Intent(this, Main2Activity.class));
-//                loading.startRotate();
+                loading.startRotate();
                 break;
             default:
                 break;
