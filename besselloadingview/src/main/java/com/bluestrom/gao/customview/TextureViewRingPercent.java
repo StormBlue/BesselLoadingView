@@ -3,16 +3,22 @@ package com.bluestrom.gao.customview;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Matrix;
 import android.graphics.Paint;
+import android.graphics.Path;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffXfermode;
 import android.graphics.RectF;
 import android.graphics.SurfaceTexture;
 import android.graphics.SweepGradient;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.TextureView;
+
+import static android.graphics.Region.Op.INTERSECT;
 
 /**
  * Created by Gao-Krund on 2016/8/4.
@@ -23,41 +29,27 @@ public class TextureViewRingPercent extends TextureView implements TextureView.S
 
     private final static int ROTATE_PATH = 0;
 
-    private float strokeWidth;
-    private float octagonAngle;
-    private int bullishStartColor;
-    private int bullishEndColor;
-    private int bearishStartColor;
-    private int bearishEndColor;
-    private int maskColor;
+    private final float strokeWidthRatio = 0.2f;
 
     private float rotateAngle = 0;
     private float ringOutRadius;// 圆环外层半径
-    private float ringInRadius;// 圆环内层半径
     private float lengthMargin = 0f;
 
     private int width, height, lengthDValue, rotateX, rotateY;
-    private Paint pathPaint, bitmapPaint;
+    private Paint gapPathPaint, bitmapPaint;
 
-    private Canvas mSrcCanvas;
-    private Bitmap mSrcBitmap;
-
-    private Matrix matrix;
-    private SweepGradient sweepGradient;
-    private RectF mRectF;
+    private Canvas mSrcCanvas, mBullishCanvas, mBearsCanvas;
+    private Bitmap mSrcBitmap, mBullishMaskBitmap, mBearishMaskBitmap;
 
     private boolean firstDraw;// 是否为第一次绘制，保证背景只绘制一次
 
+    private RectF mRectF;
+
+    private Path bullishPath = new Path(),bearishPath = new Path();
+
     private RenderThread renderThread;
 
-    private final float default_stroke_width = 45;
-    private final int default_bullish_start_color = 0xFF5F6F;
-    private final int default_bullish_end_color = 0xFF0037;
-    private final int default_bearish_start_color = 0x00D264;
-    private final int default_bearish_end_color = 0x00B234;
-    private final int default_mask_color = 0xFFEEEEEE;
-
-    private static final String INSTANCE_STATE = "saved_instance";
+    private Bitmap bg;
 
     public TextureViewRingPercent(Context context, AttributeSet attrs) {
         super(context, attrs);
@@ -70,12 +62,7 @@ public class TextureViewRingPercent extends TextureView implements TextureView.S
     }
 
     protected void initByAttributes(TypedArray attributes) {
-        strokeWidth = attributes.getDimension(R.styleable.BesselLoading_loading_stroke_width, default_stroke_width);
-        maskColor = attributes.getColor(R.styleable.BesselLoading_loading_end_color, default_mask_color);
-        bullishStartColor = default_bullish_start_color;
-        bullishEndColor = default_bullish_end_color;
-        bearishStartColor = default_bearish_start_color;
-        bearishEndColor = default_bearish_end_color;
+
     }
 
     private void init() {
@@ -85,14 +72,12 @@ public class TextureViewRingPercent extends TextureView implements TextureView.S
 
     private void initView() {
         firstDraw = true;
-
-        pathPaint = new Paint();
-        pathPaint.setStyle(Paint.Style.STROKE);
-        pathPaint.setStrokeWidth(strokeWidth);
+        gapPathPaint = new Paint();
+        gapPathPaint.setStyle(Paint.Style.STROKE);
 
         bitmapPaint = new Paint();
+        bitmapPaint.setFilterBitmap(true);
         bitmapPaint.setAntiAlias(true);
-//        bitmapPaint.setFilterBitmap(true);
     }
 
     @Override
@@ -112,9 +97,16 @@ public class TextureViewRingPercent extends TextureView implements TextureView.S
         // 圆环左端坐标与view最左侧的间距
         float leftD = lengthDValue > 0f ? lengthDValue : 0f;
         ringOutRadius = rotateX - leftD;
-        strokeWidth = ringOutRadius / 5 * 3;
-        ringInRadius = ringOutRadius - strokeWidth;
-        mRectF = new RectF(rotateX - ringOutRadius, rotateY - ringOutRadius, rotateX + ringOutRadius, rotateY + ringOutRadius);
+        mBullishMaskBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.bullish_mask);
+        mBearishMaskBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.bearish_mask);
+        mBullishCanvas = new Canvas(mBullishMaskBitmap);
+        mBearsCanvas = new Canvas(mBearishMaskBitmap);
+
+        mRectF = new RectF(rotateX - ringOutRadius, rotateY - ringOutRadius,
+                rotateX + ringOutRadius, rotateY + ringOutRadius);
+
+        mSrcBitmap = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888);
+        mSrcCanvas = new Canvas(mSrcBitmap);
     }
 
     @Override
@@ -169,11 +161,10 @@ public class TextureViewRingPercent extends TextureView implements TextureView.S
         @Override
         public void run() {
 
-            while (isRunning && rotateAngle <= 360) {
+            while (isRunning && rotateAngle < 360) {
                 try {
                     long startTime = System.currentTimeMillis();
                     drawBackground();
-                    Log.i(TAG, "绘制" + rotateAngle);
                     firstDraw = false;
                     rotateAngle += 3;
                     long dif = System.currentTimeMillis() - startTime;
@@ -184,25 +175,24 @@ public class TextureViewRingPercent extends TextureView implements TextureView.S
                     e.printStackTrace();
                 }
             }
+            Log.i(TAG, "子线程完成");
 
         }
 
-        // 绘制有透明区域的背景
         private void drawBackground() {
-            if (firstDraw) {
-                // 绘制首次显示的贝塞尔曲线
-                pathPaint.setColor(getResources().getColor(android.R.color.holo_red_dark));
-                mSrcBitmap = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888);
-                mSrcCanvas = new Canvas(mSrcBitmap);
-                sweepGradient = new SweepGradient(rotateX, rotateY, bullishEndColor, bullishStartColor);
-//                pathPaint.setShader(sweepGradient);
-            }
+            bullishPath.addArc(mRectF, -90, rotateAngle * (0.7f - 0.02f));
+            mBullishCanvas.clipPath(bullishPath, INTERSECT);
+
+            bearishPath.addArc(mRectF,-90 + rotateAngle * 0.7f, rotateAngle * (0.3f - 0.02f));
+            mBearsCanvas.clipPath(bearishPath,INTERSECT);
+
             drawPathBitmap();
         }
 
         private void drawPathBitmap() {
-            mSrcCanvas.drawArc(mRectF, 0, rotateAngle, true, pathPaint);
+            mSrcCanvas.drawBitmap(,0,0,bitmapPaint);
             c = lockCanvas(null);
+            c.drawBitmap(bg, 0, 0, bitmapPaint);
             c.drawBitmap(mSrcBitmap, 0, 0, bitmapPaint);
             unlockCanvasAndPost(c);
         }
