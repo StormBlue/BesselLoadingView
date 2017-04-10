@@ -305,7 +305,7 @@ public class TextureViewBesselLoading extends TextureView implements TextureView
 
                 Bitmap srcBitmap = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888);
                 Canvas srcCanvas = new Canvas(srcBitmap);
-                paintBg.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.SRC_OUT));
+                paintBg.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_OUT));
                 srcCanvas.drawColor(maskColor);
                 bgCanvas.drawBitmap(srcBitmap, 0, 0, paintBg);
             }

@@ -70,7 +70,7 @@ public class ViewRingPercent extends View {
         initView();
         mTypedArray.recycle();
         // 关闭硬件加速 Xfermode不支持硬件加速
-        setLayerType(View.LAYER_TYPE_SOFTWARE, null);
+//        setLayerType(View.LAYER_TYPE_SOFTWARE, null);
     }
 
     protected void initByAttributes(TypedArray attributes) {
@@ -87,14 +87,12 @@ public class ViewRingPercent extends View {
         bullishPathPaint.setDither(true);
         bullishPathPaint.setAntiAlias(true);
         bullishPathPaint.setStrokeCap(Paint.Cap.BUTT);
-//        bullishPathPaint.setShadowLayer(1, -16, 27.7f, Color.BLACK);
 
         bearishPathPaint = new Paint();
         bearishPathPaint.setStyle(Paint.Style.STROKE);
         bearishPathPaint.setDither(true);
         bearishPathPaint.setAntiAlias(true);
         bearishPathPaint.setStrokeCap(Paint.Cap.BUTT);
-//        bearishPathPaint.setShadowLayer(1, -16, 27.7f, 0xaaFFFFFF);
     }
 
     @Override
@@ -139,7 +137,6 @@ public class ViewRingPercent extends View {
             bullishPathPaint.setStrokeWidth(strokeWidth);
             bullishPathPaint.setShader(sweepBullishGradient);
             sweepBullishGradient.setLocalMatrix(matrix);
-            bullishPathPaint.setShadowLayer(1, -16, 27.7f, Color.BLACK);
 
             sweepBearishGradient = new SweepGradient(rotateX, rotateY, bearishStartColor, bearishEndColor);
             bearishPathPaint.setStrokeWidth(strokeWidth);

@@ -4,17 +4,18 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
-import com.bluestrom.gao.customview.ViewRingPercent;
+import com.bluestrom.gao.customview.TextureViewRingPercent;
+import com.bluestrom.gao.customview.ViewClipRingPercent;
 
 public class TextureViewTestActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private ViewRingPercent loading;
+    private ViewClipRingPercent loading;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_texture_view_test);
-        loading = (ViewRingPercent) findViewById(R.id.loading);
+        loading = (ViewClipRingPercent) findViewById(R.id.loading);
     }
 
     @Override
