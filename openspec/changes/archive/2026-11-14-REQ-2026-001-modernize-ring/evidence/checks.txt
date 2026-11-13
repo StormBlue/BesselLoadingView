@@ -1,0 +1,12 @@
+Command: JAVA_HOME=<Android Studio JBR25> ./gradlew :app:assembleDebug :app:assembleRelease :app:lintDebug :besselloadingview:lintDebug :besselloadingview:connectedDebugAndroidTest :besselloadingview:publishReleasePublicationToMavenLocal
+Result: BUILD SUCCESSFUL in 27s; debug and R8/resource-shrunk release, AAR/POM/sources publication passed.
+app/build/reports/lint-results-debug.txt: No issues found.
+besselloadingview/build/reports/lint-results-debug.txt: No issues found.
+TEST-RingProgress_API37(AVD) - 17.xml: {'tests': '4', 'failures': '0', 'errors': '0', 'skipped': '0'}
+TEST-Marquee_API37(AVD) - 17.xml: {'tests': '4', 'failures': '0', 'errors': '0', 'skipped': '0'}
+TEST-Marquee_API30(AVD) - 11.xml: {'tests': '4', 'failures': '0', 'errors': '0', 'skipped': '0'}
+TEST-CircularRing_API30(AVD) - 11.xml: {'tests': '4', 'failures': '0', 'errors': '0', 'skipped': '0'}
+Functional tests passed on API30 and API37. The aggregate also detected two additional active AVDs with the same API levels; all 16 executions passed.
+Runtime: release APK installed, start/stop and animation-scale behavior observed; original task AVD motion scales restored.
+Branch metadata: GitHub renamed master to main, default main confirmed; local main tracks origin/main.
+Publication is local only. No Maven Central release requested or claimed.

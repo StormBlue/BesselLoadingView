@@ -1,0 +1,345 @@
+{
+  "schema_version": 1,
+  "kind": "dev-spec-flow-revision-capture",
+  "base_commit": "bf7b86ee3547fb1acc690b6ec451ece7c6263061",
+  "scope": [
+    ".github/**",
+    "app/**",
+    "besselloadingview/**",
+    "build.gradle.kts",
+    "gradle.properties",
+    "gradle/**",
+    "gradlew",
+    "gradlew.bat",
+    "settings.gradle.kts"
+  ],
+  "changed_paths": [
+    ".github/workflows/android.yml",
+    "app/build.gradle",
+    "app/build.gradle.kts",
+    "app/proguard-rules.pro",
+    "app/src/androidTest/java/com/bluestrom/gao/besselloadingtest/ApplicationTest.java",
+    "app/src/main/AndroidManifest.xml",
+    "app/src/main/java/com/bluestrom/gao/besselloadingtest/Main2Activity.java",
+    "app/src/main/java/com/bluestrom/gao/besselloadingtest/MainActivity.java",
+    "app/src/main/java/com/bluestrom/gao/besselloadingtest/MainActivity.kt",
+    "app/src/main/java/com/bluestrom/gao/besselloadingtest/TextureViewTestActivity.java",
+    "app/src/main/res/drawable/ic_launcher.xml",
+    "app/src/main/res/layout/activity_main.xml",
+    "app/src/main/res/layout/activity_main2.xml",
+    "app/src/main/res/layout/activity_texture_view_test.xml",
+    "app/src/main/res/mipmap-hdpi/ic_launcher.png",
+    "app/src/main/res/mipmap-mdpi/ic_launcher.png",
+    "app/src/main/res/mipmap-xhdpi/ic_launcher.png",
+    "app/src/main/res/mipmap-xxhdpi/ic_launcher.png",
+    "app/src/main/res/mipmap-xxxhdpi/ic_launcher.png",
+    "app/src/main/res/values-night/styles.xml",
+    "app/src/main/res/values-w820dp/dimens.xml",
+    "app/src/main/res/values/colors.xml",
+    "app/src/main/res/values/dimens.xml",
+    "app/src/main/res/values/strings.xml",
+    "app/src/main/res/values/styles.xml",
+    "app/src/test/java/com/bluestrom/gao/besselloadingtest/ExampleUnitTest.java",
+    "besselloadingview/build.gradle",
+    "besselloadingview/build.gradle.kts",
+    "besselloadingview/proguard-rules.pro",
+    "besselloadingview/src/androidTest/AndroidManifest.xml",
+    "besselloadingview/src/androidTest/java/com/bluestrom/gao/customview/ApplicationTest.java",
+    "besselloadingview/src/androidTest/java/com/bluestrom/gao/customview/BesselLoadingViewTest.kt",
+    "besselloadingview/src/main/AndroidManifest.xml",
+    "besselloadingview/src/main/java/com/bluestrom/gao/customview/BesselLoadingView.kt",
+    "besselloadingview/src/main/java/com/bluestrom/gao/customview/KrundBesselLoading.java",
+    "besselloadingview/src/main/java/com/bluestrom/gao/customview/PercentRingSurfaceView.java",
+    "besselloadingview/src/main/java/com/bluestrom/gao/customview/SurfaceViewBesselLoading.java",
+    "besselloadingview/src/main/java/com/bluestrom/gao/customview/TextureViewBesselLoading.java",
+    "besselloadingview/src/main/java/com/bluestrom/gao/customview/TextureViewRingPercent.java",
+    "besselloadingview/src/main/java/com/bluestrom/gao/customview/ViewClipRingPercent.java",
+    "besselloadingview/src/main/java/com/bluestrom/gao/customview/ViewRingPercent.java",
+    "besselloadingview/src/main/res/drawable-xxhdpi/activity_maincontrol_bg.jpg",
+    "besselloadingview/src/main/res/drawable-xxhdpi/bearish_mask.png",
+    "besselloadingview/src/main/res/drawable-xxhdpi/bullish_mask.png",
+    "besselloadingview/src/main/res/values/attrs.xml",
+    "besselloadingview/src/main/res/values/strings.xml",
+    "besselloadingview/src/test/java/com/bluestrom/gao/customview/ExampleUnitTest.java",
+    "build.gradle.kts",
+    "gradle.properties",
+    "gradle/wrapper/gradle-wrapper.jar",
+    "gradle/wrapper/gradle-wrapper.properties",
+    "gradlew",
+    "gradlew.bat",
+    "settings.gradle.kts"
+  ],
+  "worktree_state": "scoped-dirty",
+  "entries": [
+    {
+      "path": ".github/workflows/android.yml",
+      "status": "added",
+      "sha256": "60334fe0a1790666d71504d8b3afe9d7db39abe359f630de4a7465a378e0c7ad"
+    },
+    {
+      "path": "app/build.gradle",
+      "status": "deleted",
+      "sha256": null
+    },
+    {
+      "path": "app/build.gradle.kts",
+      "status": "added",
+      "sha256": "d7ed7ccc9c5fa0fe70a9b3ccbf4ff6a13daaa2222369ef1c498119d2ab66f4fa"
+    },
+    {
+      "path": "app/proguard-rules.pro",
+      "status": "deleted",
+      "sha256": null
+    },
+    {
+      "path": "app/src/androidTest/java/com/bluestrom/gao/besselloadingtest/ApplicationTest.java",
+      "status": "deleted",
+      "sha256": null
+    },
+    {
+      "path": "app/src/main/AndroidManifest.xml",
+      "status": "modified",
+      "sha256": "123b5d22a6f24bb63b2d47e5c17a9d3d9115491d8ee4c28c4d0ef7bc393957bb"
+    },
+    {
+      "path": "app/src/main/java/com/bluestrom/gao/besselloadingtest/Main2Activity.java",
+      "status": "deleted",
+      "sha256": null
+    },
+    {
+      "path": "app/src/main/java/com/bluestrom/gao/besselloadingtest/MainActivity.java",
+      "status": "deleted",
+      "sha256": null
+    },
+    {
+      "path": "app/src/main/java/com/bluestrom/gao/besselloadingtest/MainActivity.kt",
+      "status": "added",
+      "sha256": "6a66f0fb83e40f8c292b3d21dc5b8f2cd3c9d017a56870fede04dbb12d38f215"
+    },
+    {
+      "path": "app/src/main/java/com/bluestrom/gao/besselloadingtest/TextureViewTestActivity.java",
+      "status": "deleted",
+      "sha256": null
+    },
+    {
+      "path": "app/src/main/res/drawable/ic_launcher.xml",
+      "status": "added",
+      "sha256": "d2d531fa4b27aebcc5cd9eb39cc7bb91f97b04cd6867ba32e375b446d2f7a2a9"
+    },
+    {
+      "path": "app/src/main/res/layout/activity_main.xml",
+      "status": "modified",
+      "sha256": "471d5a6309d4740ccf0b7fbc2cf86d7990c55a4d4c4a0477c25d6a24e19280db"
+    },
+    {
+      "path": "app/src/main/res/layout/activity_main2.xml",
+      "status": "deleted",
+      "sha256": null
+    },
+    {
+      "path": "app/src/main/res/layout/activity_texture_view_test.xml",
+      "status": "deleted",
+      "sha256": null
+    },
+    {
+      "path": "app/src/main/res/mipmap-hdpi/ic_launcher.png",
+      "status": "deleted",
+      "sha256": null
+    },
+    {
+      "path": "app/src/main/res/mipmap-mdpi/ic_launcher.png",
+      "status": "deleted",
+      "sha256": null
+    },
+    {
+      "path": "app/src/main/res/mipmap-xhdpi/ic_launcher.png",
+      "status": "deleted",
+      "sha256": null
+    },
+    {
+      "path": "app/src/main/res/mipmap-xxhdpi/ic_launcher.png",
+      "status": "deleted",
+      "sha256": null
+    },
+    {
+      "path": "app/src/main/res/mipmap-xxxhdpi/ic_launcher.png",
+      "status": "deleted",
+      "sha256": null
+    },
+    {
+      "path": "app/src/main/res/values-night/styles.xml",
+      "status": "added",
+      "sha256": "3eaafc41d831742bd7ad7d2932d7f2c41141e9911c4e4d5cef28552cd875b38a"
+    },
+    {
+      "path": "app/src/main/res/values-w820dp/dimens.xml",
+      "status": "deleted",
+      "sha256": null
+    },
+    {
+      "path": "app/src/main/res/values/colors.xml",
+      "status": "deleted",
+      "sha256": null
+    },
+    {
+      "path": "app/src/main/res/values/dimens.xml",
+      "status": "deleted",
+      "sha256": null
+    },
+    {
+      "path": "app/src/main/res/values/strings.xml",
+      "status": "modified",
+      "sha256": "5e073f47d15653582f75a12a314892c7a753323113c835e2d87c26a04b5da099"
+    },
+    {
+      "path": "app/src/main/res/values/styles.xml",
+      "status": "deleted",
+      "sha256": null
+    },
+    {
+      "path": "app/src/test/java/com/bluestrom/gao/besselloadingtest/ExampleUnitTest.java",
+      "status": "deleted",
+      "sha256": null
+    },
+    {
+      "path": "besselloadingview/build.gradle",
+      "status": "deleted",
+      "sha256": null
+    },
+    {
+      "path": "besselloadingview/build.gradle.kts",
+      "status": "added",
+      "sha256": "a208b3d6a3709fd3752e8db909fe3d6daa33cad11ac17b9cbd2f57ef26505f49"
+    },
+    {
+      "path": "besselloadingview/proguard-rules.pro",
+      "status": "deleted",
+      "sha256": null
+    },
+    {
+      "path": "besselloadingview/src/androidTest/AndroidManifest.xml",
+      "status": "added",
+      "sha256": "7191c00c9ba6d2cb0350805791824641bc6d04b343d26f32112e46b1c18ff56b"
+    },
+    {
+      "path": "besselloadingview/src/androidTest/java/com/bluestrom/gao/customview/ApplicationTest.java",
+      "status": "deleted",
+      "sha256": null
+    },
+    {
+      "path": "besselloadingview/src/androidTest/java/com/bluestrom/gao/customview/BesselLoadingViewTest.kt",
+      "status": "added",
+      "sha256": "6b10847a1b501ce6f87a2c8261ff08acd62410c490c8c5d6b87cf57a092462d5"
+    },
+    {
+      "path": "besselloadingview/src/main/AndroidManifest.xml",
+      "status": "modified",
+      "sha256": "571f2735faf5e857752ee057ac8ef63425576a721616c60b86ee5d4c0a2d682f"
+    },
+    {
+      "path": "besselloadingview/src/main/java/com/bluestrom/gao/customview/BesselLoadingView.kt",
+      "status": "added",
+      "sha256": "ed5567ef239182ab75fed60d621e4ef1f73dff100a6ff86a2a836413f24d37d5"
+    },
+    {
+      "path": "besselloadingview/src/main/java/com/bluestrom/gao/customview/KrundBesselLoading.java",
+      "status": "deleted",
+      "sha256": null
+    },
+    {
+      "path": "besselloadingview/src/main/java/com/bluestrom/gao/customview/PercentRingSurfaceView.java",
+      "status": "deleted",
+      "sha256": null
+    },
+    {
+      "path": "besselloadingview/src/main/java/com/bluestrom/gao/customview/SurfaceViewBesselLoading.java",
+      "status": "deleted",
+      "sha256": null
+    },
+    {
+      "path": "besselloadingview/src/main/java/com/bluestrom/gao/customview/TextureViewBesselLoading.java",
+      "status": "deleted",
+      "sha256": null
+    },
+    {
+      "path": "besselloadingview/src/main/java/com/bluestrom/gao/customview/TextureViewRingPercent.java",
+      "status": "deleted",
+      "sha256": null
+    },
+    {
+      "path": "besselloadingview/src/main/java/com/bluestrom/gao/customview/ViewClipRingPercent.java",
+      "status": "deleted",
+      "sha256": null
+    },
+    {
+      "path": "besselloadingview/src/main/java/com/bluestrom/gao/customview/ViewRingPercent.java",
+      "status": "deleted",
+      "sha256": null
+    },
+    {
+      "path": "besselloadingview/src/main/res/drawable-xxhdpi/activity_maincontrol_bg.jpg",
+      "status": "deleted",
+      "sha256": null
+    },
+    {
+      "path": "besselloadingview/src/main/res/drawable-xxhdpi/bearish_mask.png",
+      "status": "deleted",
+      "sha256": null
+    },
+    {
+      "path": "besselloadingview/src/main/res/drawable-xxhdpi/bullish_mask.png",
+      "status": "deleted",
+      "sha256": null
+    },
+    {
+      "path": "besselloadingview/src/main/res/values/attrs.xml",
+      "status": "modified",
+      "sha256": "2e66a6d96987116ba7f6398ca7f5c08c72403721746feaae86477ede19ea99af"
+    },
+    {
+      "path": "besselloadingview/src/main/res/values/strings.xml",
+      "status": "modified",
+      "sha256": "2c07355f9c7572de41d048d6cbe8606bdb41aa80deb7c04d4f8fa98203db1065"
+    },
+    {
+      "path": "besselloadingview/src/test/java/com/bluestrom/gao/customview/ExampleUnitTest.java",
+      "status": "deleted",
+      "sha256": null
+    },
+    {
+      "path": "build.gradle.kts",
+      "status": "added",
+      "sha256": "98351afec6467900d880ea55dfe38565f482b62d6c599610e5027e75019070bb"
+    },
+    {
+      "path": "gradle.properties",
+      "status": "modified",
+      "sha256": "4df297e6f500064db5eb22e32d83042f5f4673eb79a6c18c9b32a4112af5d9d2"
+    },
+    {
+      "path": "gradle/wrapper/gradle-wrapper.jar",
+      "status": "modified",
+      "sha256": "621008afc4f5d59357fcf06ffa644dd5aade5e091bdc363742710445f73cdaf8"
+    },
+    {
+      "path": "gradle/wrapper/gradle-wrapper.properties",
+      "status": "modified",
+      "sha256": "3fc4828c26341727e23829486f84dcf42cedc59569b9a1d9384eb83914cc19fd"
+    },
+    {
+      "path": "gradlew",
+      "status": "modified",
+      "sha256": "e01b5c97892572c82405c02b96a3382379100e7d825ce7c48883d95c26928750"
+    },
+    {
+      "path": "gradlew.bat",
+      "status": "modified",
+      "sha256": "ad2fac6060c5b929bed15d428e09483e52747d0120874346861ad4ec324af64c"
+    },
+    {
+      "path": "settings.gradle.kts",
+      "status": "added",
+      "sha256": "9d4ea63b1ed4ac2b61ab4b714e4e040be76281faa8009565084daec519cb0514"
+    }
+  ]
+}

@@ -1,3 +1,5 @@
 <resources>
-    <string name="app_name">BesselLoadingView</string>
+    <string name="bessel_loading">Loading</string>
+    <string name="bessel_stopped">Loading stopped</string>
+    <string name="bessel_description_with_state">%1$s, %2$s</string>
 </resources>

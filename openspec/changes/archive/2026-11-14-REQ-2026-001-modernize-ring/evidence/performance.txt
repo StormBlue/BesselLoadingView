@@ -1,0 +1,8 @@
+RingProgress_API37(AVD) - 17
+11-14 02:13:38.809 10637 10637 I BesselBenchmark: bessel frames=50 drawP50=0.060208 drawP95=0.537291 totalP50=85.531776 totalP95=150.90939
+11-14 02:13:41.539 10637 10637 I BesselBenchmark: platform frames=64 drawP50=6.472982 drawP95=15.232323 totalP50=46.818612 totalP95=74.228992
+CircularRing_API30(AVD) - 11
+11-14 02:13:36.606 10221 10221 I BesselBenchmark: bessel frames=63 drawP50=0.081208 drawP95=0.353708 totalP50=78.523504 totalP95=117.52679
+11-14 02:13:39.359 10221 10221 I BesselBenchmark: platform frames=57 drawP50=8.79093 drawP95=15.760613 totalP50=39.210291 totalP95=71.845186
+
+FrameMetrics DRAW_DURATION records CPU draw commands, not GPU completion. Total duration is high in both the component and platform reference on the shared multi-AVD host. No device FPS guarantee or speedup ratio inferred.

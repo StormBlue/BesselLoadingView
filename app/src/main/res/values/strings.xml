@@ -1,3 +1,25 @@
 <resources>
-    <string name="app_name">BesselLoadingTest</string>
+    <string name="app_name">Bessel Loading</string>
+    <string name="eyebrow">ANDROID · OPEN SOURCE</string>
+    <string name="title">A little motion.\nA lighter footprint.</string>
+    <string name="subtitle">A rotating gradient on a Bezier ring. Small, smooth, and easy to drop into your UI.</string>
+    <string name="loading">Loading</string>
+    <string name="stopped">Paused</string>
+    <string name="shape">Squarer ring</string>
+    <string name="warm">Warm colors</string>
+    <string name="slow">Slower animation</string>
+    <string name="start">Start loading</string>
+    <string name="stop">Stop loading</string>
+    <string name="controls">TRY IT YOURSELF</string>
+    <string name="footer">Frame-synced animation · No drawing threads\nPauses when hidden · Respects reduced motion</string>
+    <string name="loading_description">Loading indicator</string>
+    <color name="background">#F6F8FC</color>
+    <color name="foreground">#15233B</color>
+    <color name="secondary">#53647B</color>
+    <style name="AppTheme" parent="android:style/Theme.Material.Light.NoActionBar">
+        <item name="android:fontFamily">sans</item>
+        <item name="android:colorAccent">#2563EB</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:windowBackground">@color/background</item>
+    </style>
 </resources>

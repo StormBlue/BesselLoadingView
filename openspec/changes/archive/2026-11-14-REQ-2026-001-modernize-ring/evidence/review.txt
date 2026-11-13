@@ -1,0 +1,10 @@
+Integrated performance/accessibility review:
+- Independent review confirmed original diagonal midpoint geometry and correct extrema factor.
+- Dynamic relative padding and RTL invalidate geometry.
+- Lifecycle cancellation and repeated start are covered by device tests.
+- Loading state is exposed independently of the host label on API30+; API23-29 append localized state to the label.
+- Removed determinate progress API and sample controls per final user scope.
+- Main-only CI is intentional: remote/default and local branches have been renamed to main.
+- README describes current parameters and local publication only; docs/verification.md exists.
+- CPU draw command timings are separated from GPU/end-to-end timings; no FPS or comparative speedup claim.
+Unresolved findings: none. Real-device frame performance and API23-29 runtime remain unmeasured and are explicitly documented.
