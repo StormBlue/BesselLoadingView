@@ -2,7 +2,9 @@
 
 一个轻量的 Android **Loading 组件**：四段三次贝塞尔曲线构成环形，渐变沿环旋转。使用 Kotlin 自定义 View，支持 XML、Kotlin 和 Compose 的 `AndroidView` 接入。
 
-<img src="docs/images/sample.png" alt="Loading 示例：贝塞尔渐变环和启停、外观控件" width="360" />
+<img src="docs/images/loading.gif" alt="Loading 动画演示：渐变沿贝塞尔环持续旋转" width="360" />
+
+[查看静态截图](docs/images/sample.png)
 
 - 保留贝塞尔环的曲线造型，可调整控制角度、线宽、渐变色和转速。
 - `start()` / `stop()` 控制加载；默认自动开始，停止后保留当前画面。
